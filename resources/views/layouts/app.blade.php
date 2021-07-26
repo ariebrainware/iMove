@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'iLaundry') }}</title>
+    <title>{{ config('app.name', 'iMove Console') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
@@ -35,14 +35,21 @@
     <!--Sass-->
     <link rel="stylesheet" href="https://github.com/twbs/bootstrap-sass.git">
     @yield('css')
+
+    <style>
+        body {
+            background-color: #1ebbd7;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'iLaundry') }}
+                    {{ config('app.name', 'iMove Console') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -68,10 +75,10 @@
                         @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/customer') }}">Customer</a>
+                            <a class="nav-link" href="{{ url('/customer') }}">Recipient</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/paket-laundry') }}">Paket laundry</a>
+                            <a class="nav-link" href="{{ url('/item') }}">Storage Item</a>
                         </li>
 
                         <li class="nav-item dropdown">

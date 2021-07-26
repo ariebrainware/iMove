@@ -15,19 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('paket-laundry', 'PaketController@index');
-Route::get('paket-laudry/add', 'PaketController@add');
-Route::post('paket-laudry/add', 'PaketController@store');
-Route::get('paket-laundry/{id}', 'PaketController@edit');
-Route::put('paket-laundry/{id}', 'PaketController@update');
-Route::delete('paket-laundry/{id}', 'PaketController@delete');
+Route::get('item', 'ItemController@index');
+Route::get('item/add', 'ItemController@add');
+Route::post('item/add', 'ItemController@store');
+Route::get('item/{id}', 'ItemController@edit');
+Route::put('item/{id}', 'ItemController@update');
+Route::delete('item/{id}', 'ItemController@delete');
 
-Route::get('customer', 'CustomerController@index');
-Route::get('customer/add', 'CustomerController@add');
-Route::post('customer/add', 'CustomerController@store');
-Route::get('customer/{id}', 'CustomerController@edit');
-Route::put('customer/{id}', 'CustomerController@update');
-Route::delete('customer/{id}', 'CustomerController@delete');
+// Route::get('customer', 'CustomerController@index');
+// Route::get('customer/add', 'CustomerController@add');
+// Route::post('customer/add', 'CustomerController@store');
+// Route::get('customer/{id}', 'CustomerController@edit');
+// Route::put('customer/{id}', 'CustomerController@update');
+// Route::delete('customer/{id}', 'CustomerController@delete');
 
 Auth::routes();
 

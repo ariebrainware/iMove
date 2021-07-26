@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTablePaket extends Migration
+class CreateTableItem extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateTablePaket extends Migration
      */
     public function up()
     {
-        Schema::create('paket', function (Blueprint $table) {
-
-            $table->string('id', 40);
-            $table->string('nama', 115);
-            $table->integer('harga');
+        Schema::create('item', function (Blueprint $table) {
+            $table->string('id', 30);
+            $table->integer('recipient_id');
+            $table->string('name');
+            $table->integer('weight');
+            $table->integer('height');
+            $table->float('volume_cm3');
             $table->timestamps();
 
             $table->primary('id');
-            $table->engine = 'innoDB';
+            $table->engine = 'InnoDB';
         });
     }
 
@@ -32,7 +34,7 @@ class CreateTablePaket extends Migration
      */
     public function down()
     {
-        Schema::table('paket', function (Blueprint $table) {
+        Schema::table('item', function (Blueprint $table) {
             //
         });
     }

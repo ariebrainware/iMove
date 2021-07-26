@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>iLaundry</title>
+    <title>iMove Console</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
     <style>
         html,
         body {
-            background-color: #fff;
-            color: #636b6f;
+            background-color: #1ebbd7;
+            color: #fff;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
@@ -51,7 +51,7 @@
         }
 
         .links>a {
-            color: #636b6f;
+            color: #fff;
             padding: 0 25px;
             font-size: 13px;
             font-weight: 600;
@@ -84,12 +84,12 @@
 
         <div class="content">
             <div class="title m-b-md">
-                iLaundry
+                iMove Console
             </div>
 
             <div class="links">
                 <a href="https://www.linkedin.com/in/muhamad-arie-b8a040166/">LinkedIn</a>
-                <a href="https://github.com/ariebrainware/iLaundry">GitHub</a>
+                <a href="https://github.com/ariebrainware/iMove">GitHub</a>
                 <a href="https://ariebrainware.com">Author</a>
             </div>
         </div>

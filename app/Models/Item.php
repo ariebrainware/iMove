@@ -1,11 +1,11 @@
 <?php
 
-namespace App\models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Paket extends Model
+class Item extends Model
 {
-    protected $table = 'paket';
+    protected $table = 'item';
     public $incrementing = false;
 }
