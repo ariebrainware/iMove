@@ -57,13 +57,12 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-
                     <form action="{{ url('item/'.$dt->id) }}" method="post">
                       @csrf
                       {{method_field('delete')}}
                       <div class="modal-body">
                         <p>Are you sure want to delete this item?</p>
-                        <input type="hidden" name="data" id="data_id" value="{{$dt->id}}">
+                        <input type="text" name="data" id="data_id" value="" />
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

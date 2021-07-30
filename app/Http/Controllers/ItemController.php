@@ -86,7 +86,7 @@ class ItemController extends Controller
 
     public function delete(Request $request)
     {
-        $delete = Item::findOrFail($request->id);
+        $delete = Item::findOrFail($request->data);
         $delete->delete();
         if ($delete) {
             alert()->success('Success', 'Item deleted');

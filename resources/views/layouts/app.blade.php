@@ -10,16 +10,8 @@
 
     <title>{{ config('app.name', 'iMove Console') }}</title>
 
-    <!-- Scripts -->
+    <!-- Script -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        $('#delete').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget)
-            var data_id = button.data('dataid')
-            var modal = $(this)
-            modal.find('.modal-body #data_id').val(data_id)
-        })
-    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -105,7 +97,16 @@
         </main>
     </div>
 
-    <script src="{{ asset('js/jquery.min.js ')}}"></script>
+    <script>
+        $('#delete').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var data_id = button.data('dataid')
+            var modal = $(this)
+            modal.find('.modal-body #data_id').val(data_id)
+            console.log("CALLED")
+            debugger
+        })
+    </script>
     <script type="text/javascript" charset="utf8" src="{{ asset('js/jquery.dataTables.js') }}"></script>
     <script>
         $(document).ready(function() {
