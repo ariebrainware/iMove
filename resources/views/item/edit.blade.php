@@ -21,19 +21,29 @@
                     <form method="post" action="{{url('item/'.$dt->id)}}">
                         @csrf
                         {{method_field('PUT')}}
-
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Nama Paket</label>
-                                <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Paket" value="{{$dt->nama}}">
+                                <label for="exampleInputEmail1">Recipient ID</label>
+                                <input type="number" name="recipient_id" class="form-control" id="exampleInputEmail1" placeholder="Recipient ID" value="{{$dt->recipient_id}}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Harga Paket / KG</label>
-                                <input type="number" name="harga" class="form-control" id="exampleInputPassword1" placeholder="Harga" value="{{$dt->harga}}">
+                                <label for="exampleInputPassword1">Item Name</label>
+                                <input type="text" name="name" class="form-control" id="exampleInputPassword1" placeholder="Item Name" value="{{$dt->name}}">
                             </div>
-
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Weight</label>
+                                <input type="number" name="weight" class="form-control" id="exampleInputEmail1" placeholder="Weight" value="{{$dt->weight}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Height</label>
+                                <input type="number" name="height" class="form-control" id="exampleInputEmail1" placeholder="Height" value="{{$dt->height}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Volume CM3</label>
+                                <input type="number" name="volume_cm3" class="form-control" id="exampleInputEmail1" placeholder="Volume CM3" value="{{$dt->volume_cm3}}">
+                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a herf="{{url('item')}}" class="btn btn-success">Kembali</a>
+                            <a href="{{url('item')}}" class="btn btn-success">Cancel</a>
                         </form>
                 </div>
             </div>

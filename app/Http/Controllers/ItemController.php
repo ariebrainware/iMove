@@ -38,6 +38,7 @@ class ItemController extends Controller
         $data['name'] = $request->name;
         $data['weight'] = $request->weight;
         $data['height'] = $request->height;
+        $data['volume_cm3'] = $request->volume_cm3;
         $data['created_at'] = date('Y-m-d H:i:s');
         $data['updated_at'] = date('Y-m-d H:i:s');
 
@@ -64,10 +65,11 @@ class ItemController extends Controller
 
     public function update(Request $request, $id)
     {
-        $data['recipient'] = $request->recipient;
+        $data['recipient_id'] = $request->recipient_id;
         $data['name'] = $request->name;
         $data['weight'] = $request->weight;
         $data['height'] = $request->height;
+        $data['volume_cm3'] = $request->volume_cm3;
         $data['created_at'] = date('Y-m-d H:i:s');
         $data['updated_at'] = date('Y-m-d H:i:s');
 
@@ -84,7 +86,7 @@ class ItemController extends Controller
 
     public function delete(Request $request)
     {
-        $delete = Item::findOrFail($request->data);
+        $delete = Item::findOrFail($request->id);
         $delete->delete();
         if ($delete) {
             alert()->success('Success', 'Item deleted');

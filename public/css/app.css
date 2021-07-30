@@ -2677,8 +2677,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #6cb2eb;
+  border-color: #6cb2eb;
 }
 
 .btn-primary:hover {
@@ -6315,6 +6315,7 @@ a.close.disabled {
 }
 
 .modal-header {
+  background-color: #3490dc;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -6338,9 +6339,11 @@ a.close.disabled {
   position: relative;
   flex: 1 1 auto;
   padding: 1rem;
+  background-color: #3490dc;
 }
 
 .modal-footer {
+  background-color: #3490dc;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

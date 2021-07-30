@@ -18,21 +18,31 @@
 
                 <div class="card-body">
 
-                    <form method="post" action="{{url('paket-laudry/add')}}">
+                    <form method="post" action="{{url('item/add')}}">
                         @csrf
-
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Nama Paket</label>
-                                <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Paket">
+                                <label for="exampleInputEmail1">Recipient ID</label>
+                                <input type="number" name="recipient_id" class="form-control" id="exampleInputEmail1" placeholder="Recipient ID">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Harga Paket / KG</label>
-                                <input type="number" name="harga" class="form-control" id="exampleInputPassword1" placeholder="Harga">
+                                <label for="exampleInputPassword1">Item Name</label>
+                                <input type="text" name="name" class="form-control" id="exampleInputPassword1" placeholder="Item Name">
                             </div>
-
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Weight</label>
+                                <input type="number" name="weight" class="form-control" id="exampleInputEmail1" placeholder="Weight">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Height</label>
+                                <input type="number" name="height" class="form-control" id="exampleInputEmail1" placeholder="Height">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Volume CM3</label>
+                                <input type="number" name="volume_cm3" class="form-control" id="exampleInputEmail1" placeholder="Volume CM3">
+                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a herf="{{url('item')}}" class="btn btn-success">Kembali</a>
+                            <a href="{{url('item')}}" class="btn btn-success">Cancel</a>
                         </form>
                 </div>
             </div>

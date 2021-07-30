@@ -20,6 +20,7 @@
                 <th>Name</th>
                 <th>Weight</th>
                 <th>Height</th>
+                <th>Volume CM3</th>
                 <th>Created At</th>
                 <th>Updated At</th>
                 <th>Action</th>
@@ -33,6 +34,7 @@
                 <td>{{$dt->name}}</td>
                 <td>{{$dt->weight}}</td>
                 <td>{{$dt->height}}</td>
+                <td>{{$dt->volume_cm3}}</td>
                 <td>{{date('d F Y H:i:s', strtotime($dt->created_at))}}</td>
                 <td>{{date('d F Y H:i:s', strtotime($dt->updated_at))}}</td>
                 <td>

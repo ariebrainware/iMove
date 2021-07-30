@@ -40,7 +40,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a herf="{{url('customer')}}" class="btn btn-success">Kembali</a>
+                            <a href="{{url('customer')}}" class="btn btn-success">Cancel</a>
                         </form>
                 </div>
             </div>
