@@ -64,7 +64,7 @@
                         @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/customer') }}">Recipient</a>
+                            <a class="nav-link" href="{{ url('/recipient') }}">Recipient</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/item') }}">Storage Item</a>

@@ -22,12 +22,12 @@ Route::get('item/{id}', 'ItemController@edit');
 Route::put('item/{id}', 'ItemController@update');
 Route::delete('item/{id}', 'ItemController@delete');
 
-// Route::get('customer', 'CustomerController@index');
-// Route::get('customer/add', 'CustomerController@add');
-// Route::post('customer/add', 'CustomerController@store');
-// Route::get('customer/{id}', 'CustomerController@edit');
-// Route::put('customer/{id}', 'CustomerController@update');
-// Route::delete('customer/{id}', 'CustomerController@delete');
+Route::get('recipient', 'RecipientController@index');
+Route::get('recipient/add', 'RecipientController@add');
+Route::post('recipient/add', 'RecipientController@store');
+Route::get('recipient/{id}', 'RecipientController@edit');
+Route::put('recipient/{id}', 'RecipientController@update');
+Route::delete('recipient/{id}', 'RecipientController@delete');
 
 Auth::routes();
 
