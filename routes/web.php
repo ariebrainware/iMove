@@ -36,6 +36,11 @@ Route::get('sender/{id}', 'SenderController@edit');
 Route::put('sender/{id}', 'SenderController@update');
 Route::delete('sender/{id}', 'SenderController@delete');
 
+Route::get('transaction', 'TransactionController@index');
+Route::get('transaction/add', 'TransactionController@add');
+Route::post('transaction/add', 'TransactionController@store');
+Route::delete('transaction/{id}', 'TransactionController@delete');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

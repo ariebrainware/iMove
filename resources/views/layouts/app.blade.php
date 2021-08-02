@@ -73,7 +73,7 @@
                             <a class="nav-link" href="{{ url('/recipient') }}">Recipient</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/item') }}">Storage Item</a>
+                            <a class="nav-link" href="{{ url('/transaction') }}">Transaction</a>
                         </li>
 
                         <li class="nav-item dropdown">
