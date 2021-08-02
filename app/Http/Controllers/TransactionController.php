@@ -31,11 +31,11 @@ class TransactionController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'sender' => 'required',
             'item' => 'required',
             'recipient' => 'required',
+            'price' => 'required',
         ]);
 
         $data['id'] = \Uuid::generate(4);
@@ -64,34 +64,50 @@ class TransactionController extends Controller
         return redirect('transaction');
     }
 
-    // public function edit($id)
-    // {
-    //     $dt = Transaction::find($id);
-    //     $title = "Edit Transaction $dt->name";
+    public function edit($id)
+    {
+        $dt = Transaction::find($id);
+        $title = "Edit Transaction $dt->name";
+        $sender = Sender::orderBy('name', 'asc')->get();
+        $item = Item::orderBy('name', 'asc')->get();
+        $recipient = Recipient::orderBy('name', 'asc')->get();
 
-    //     return view('transaction.edit', compact('title', 'dt'));
-    // }
+        return view('transaction.edit', compact('title', 'sender', 'item', 'recipient', 'dt'));
+    }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $data['name'] = $request->name;
-    //     $data['address'] = $request->address;
-    //     $data['email'] = $request->email;
-    //     $data['phone_number'] = $request->phone_number;
-    //     $data['postal_code'] = $request->postal_code;
-    //     $data['created_at'] = date('Y-m-d H:i:s');
-    //     $data['updated_at'] = date('Y-m-d H:i:s');
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'sender' => 'required',
+            'item' => 'required',
+            'recipient' => 'required',
+            'price' => 'required',
+        ]);
 
-    //     $update = Transaction::where('id', $id)->update($data);
+        $data['sender'] = $request->sender;
+        $data['item'] = $request->item;
+        $data['updated_at'] = date('Y-m-d H:i:s');
+        $data['price'] =  $request->price;
+        $data['recipient'] = $request->recipient;
 
-    //     if ($update) {
-    //         alert()->success('Success', 'Transaction edited');
-    //         return redirect('transaction');
-    //     } else {
-    //         alert()->error('Fail', 'Transaction cannot be edit');
-    //         return redirect('transaction');
-    //     }
-    // }
+        $price = $data['price'];
+        $item = Item::find($request->item);
+        // print_r($item);
+        // $this->info($item);
+        $weight = $item->weight;
+        $grand_total = $price * $weight;
+        $data['grand_total'] = $grand_total;
+
+        $update = Transaction::where('id', $id)->update($data);
+
+        if ($update) {
+            alert()->success('Success', 'Transaction edited');
+            return redirect('transaction');
+        } else {
+            alert()->error('Fail', 'Transaction cannot be edit');
+            return redirect('transaction');
+        }
+    }
 
     public function delete(Request $request)
     {

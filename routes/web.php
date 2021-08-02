@@ -39,6 +39,8 @@ Route::delete('sender/{id}', 'SenderController@delete');
 Route::get('transaction', 'TransactionController@index');
 Route::get('transaction/add', 'TransactionController@add');
 Route::post('transaction/add', 'TransactionController@store');
+Route::get('transaction/{id}', 'TransactionController@edit');
+Route::put('transaction/{id}', 'TransactionController@update');
 Route::delete('transaction/{id}', 'TransactionController@delete');
 
 Auth::routes();

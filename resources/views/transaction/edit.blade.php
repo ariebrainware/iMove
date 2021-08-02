@@ -17,32 +17,44 @@
                 @endif
 
                 <div class="card-body">
-                    <form method="post" action="{{url('sender/'.$dt->id)}}">
+                    <form method="post" action="{{url('transaction/'.$dt->id)}}">
                         @csrf
                         {{method_field('PUT')}}
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Name</label>
-                                <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Name" value="{{$dt->name}}">
+                                <label for="exampleInputEmail1">Sender</label>
+                                <select class="custom-select" name="sender">
+                                    <option selected>--</option>
+                                    @foreach($sender as $s)
+                                    <option value="{{$s->id}}" {{($dt->sender == $s->id?'selected': '')}}>{{$s->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Address</label>
-                                <input type="text" name="address" class="form-control" id="exampleInputPassword1" placeholder="Address" value="{{$dt->address}}">
+                                <label for="exampleInputEmail1">Item</label>
+                                <select class="custom-select" name="item">
+                                    <option selected>--</option>
+                                    @foreach($item as $i)
+                                    <option value="{{$i->id}}" {{($dt->item == $i->id?'selected': '')}}>{{$i->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="{{$dt->email}}">
+                                <label for="exampleInputEmail1">Recipient</label>
+                                <select class="custom-select" name="recipient">
+                                    <option selected>--</option>
+                                    @foreach($recipient as $r)
+                                    <option value="{{$r->id}}" {{($dt->recipient == $r->id?'selected': '')}}>{{$r->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Phone Number</label>
-                                <input type="text" name="phone_number" class="form-control" id="exampleInputEmail1" placeholder="Phone Number" value="{{$dt->phone_number}}">
+                                <label for="exampleInputEmail1">Price per KG</label>
+                                <input type="number" name="price" class="form-control" id="exampleInputEmail1" placeholder="10000" value="{{$dt->price}}" />
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Postal Code</label>
-                                <input type="number" name="postal_code" class="form-control" id="exampleInputEmail1" placeholder="Postal Code" value="{{$dt->postal_code}}">
-                            </div>
+
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="{{url('sender')}}" class="btn btn-success">Cancel</a>
+                            <a href="{{url('transaction')}}" class="btn btn-success">Cancel</a>
                         </form>
                 </div>
             </div>
