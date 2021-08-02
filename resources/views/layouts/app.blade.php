@@ -64,6 +64,12 @@
                         @endif
                         @else
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/sender') }}">Sender</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/item') }}">Storage Item</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/recipient') }}">Recipient</a>
                         </li>
                         <li class="nav-item">

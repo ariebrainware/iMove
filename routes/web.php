@@ -29,6 +29,13 @@ Route::get('recipient/{id}', 'RecipientController@edit');
 Route::put('recipient/{id}', 'RecipientController@update');
 Route::delete('recipient/{id}', 'RecipientController@delete');
 
+Route::get('sender', 'SenderController@index');
+Route::get('sender/add', 'SenderController@add');
+Route::post('sender/add', 'SenderController@store');
+Route::get('sender/{id}', 'SenderController@edit');
+Route::put('sender/{id}', 'SenderController@update');
+Route::delete('sender/{id}', 'SenderController@delete');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
