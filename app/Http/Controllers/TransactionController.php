@@ -7,6 +7,7 @@ use App\Models\Transaction;
 use App\Models\Sender;
 use App\Models\Item;
 use App\Models\Recipient;
+use PDF;
 
 class TransactionController extends Controller
 {
@@ -120,5 +121,12 @@ class TransactionController extends Controller
             alert()->error('Fail', 'Transaction cannot be delete');
             return redirect('transaction');
         }
+    }
+
+    public function export($id)
+    {
+        $dt =  Transaction::find($id);
+        $pdf = PDF::loadView('transaction.pdf', ['dt' => $dt]);
+        return $pdf->download('transaction.pdf');
     }
 }

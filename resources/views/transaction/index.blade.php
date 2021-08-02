@@ -42,6 +42,7 @@
                     <button type="button" class="btn btn-danger btn-sm" data-dataid="{{$dt->id}}" data-toggle="modal" data-target="#delete">
                       Delete
                     </button>
+                    <a href="{{ url('transaction/print/'.$dt->id)}}" class="btn btn-info btn-sm">Print</a>
                   </div>
               </tr>
 

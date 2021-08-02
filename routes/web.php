@@ -42,6 +42,7 @@ Route::post('transaction/add', 'TransactionController@store');
 Route::get('transaction/{id}', 'TransactionController@edit');
 Route::put('transaction/{id}', 'TransactionController@update');
 Route::delete('transaction/{id}', 'TransactionController@delete');
+Route::get('transaction/print/{id}', 'TransactionController@export');
 
 Auth::routes();
 
