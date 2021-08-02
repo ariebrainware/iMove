@@ -33,6 +33,7 @@ class RecipientController extends Controller
             'phone_number' => 'required',
         ]);
 
+        $data['id'] = \Uuid::generate(4);
         $data['name'] = $request->name;
         $data['address'] = $request->address;
         $data['email'] = $request->email;
