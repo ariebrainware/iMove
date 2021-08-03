@@ -68,7 +68,7 @@ class TransactionController extends Controller
     public function edit($id)
     {
         $dt = Transaction::find($id);
-        $title = "Edit Transaction $dt->name";
+        $title = "Edit Transaction";
         $sender = Sender::orderBy('name', 'asc')->get();
         $item = Item::orderBy('name', 'asc')->get();
         $recipient = Recipient::orderBy('name', 'asc')->get();
@@ -93,8 +93,6 @@ class TransactionController extends Controller
 
         $price = $data['price'];
         $item = Item::find($request->item);
-        // print_r($item);
-        // $this->info($item);
         $weight = $item->weight;
         $grand_total = $price * $weight;
         $data['grand_total'] = $grand_total;
@@ -128,5 +126,15 @@ class TransactionController extends Controller
         $dt =  Transaction::find($id);
         $pdf = PDF::loadView('transaction.pdf', ['dt' => $dt]);
         return $pdf->download('transaction.pdf');
+    }
+
+    public function filter(Request $request)
+    {
+        $from = $request->from;
+        $until = $request->until;
+        $title = "Transaction from $from until $until";
+
+        $data = Transaction::where('created_at', '>=', $from)->where('created_at', '<=', $until)->orderBy('created_at', 'asc')->get();
+        return view('transaction.index', compact('title', 'data'));
     }
 }

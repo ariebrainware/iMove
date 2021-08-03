@@ -37,6 +37,7 @@ Route::put('sender/{id}', 'SenderController@update');
 Route::delete('sender/{id}', 'SenderController@delete');
 
 Route::get('transaction', 'TransactionController@index');
+Route::get('transaction/filter', 'TransactionController@filter');
 Route::get('transaction/add', 'TransactionController@add');
 Route::post('transaction/add', 'TransactionController@store');
 Route::get('transaction/{id}', 'TransactionController@edit');

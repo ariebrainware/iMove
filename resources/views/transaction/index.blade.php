@@ -43,10 +43,13 @@
                       Delete
                     </button>
                     <a href="{{ url('transaction/print/'.$dt->id)}}" class="btn btn-info btn-sm">Print</a>
+                    <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#filter">
+                      Filter
+                    </button>
                   </div>
               </tr>
 
-              <!-- Modal -->
+              <!-- Modal Delete -->
               <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -68,6 +71,39 @@
                         <button type="submit" class="btn btn-primary">Ok</button>
                       </div>
                     </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal Filter -->
+              <div class="modal fade" id="filter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <form action="{{url('transaction/filter')}}" method="get">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                      <div class="modal-body">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">From</label>
+                          <input type="text" name="from" class="form-control date" id="exampleInputEmail1" value="{{date('Y-m-d')}}">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Until</label>
+                          <input type="text" name="until" class="form-control date" id="exampleInputEmail1" value="{{date('Y-m-d')}}">
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                      </div>
+                    </form>
+
                   </div>
                 </div>
               </div>

@@ -12,6 +12,11 @@ class Transaction extends Model
     protected $table = 'transaction';
     public $incrementing = false;
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function senders()
     {
         return $this->belongsTo('App\Models\Sender', 'sender', 'id');
